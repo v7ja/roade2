@@ -9,7 +9,7 @@ import os,sys,time,requests
 try:
 	Info = open("info.txt").read()
 except:
-	Info = "CaRLoS"	
+	Info = "AbOOd"	
 if ":" not in Info:
 	token = input("- EnTeR ToKeN : ");reqtoken = requests.get(f"https://api.telegram.org/bot{token}/getme").json();req = reqtoken["ok"]
 	if req == True:
@@ -22,8 +22,21 @@ else:
 	print("Ok .")
 info = open("info.txt",'r').read();token = info.split('\n')[0];own_id = info.split('\n')[1]
 bot = telebot.TeleBot(token)
-SaiF = types.InlineKeyboardButton(text = "- aBooD ☬ .", url = 'https://t.me/c_7c7')
-channel = types.InlineKeyboardButton(text = "- Ch  .", url = 'https://t.me/ToGoLang')
+SaiF = types.InlineKeyboardButton(text = "- aBooD .", url = 'https://t.me/@c_7c7')
+channel = types.InlineKeyboardButton(text = "- 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 .", url = 'https://t.me/ToGoLang')
+@bot.message_handler(commands=[('check']))
+async def check(message):
+ await bot.reply_to(message, "جار..")
+ for session in open("account.txt","r").read():
+   FUCK = 1
+   client = Client("",
+      api_id=api_id,api_hash=api_hash,session_string=ses)
+   try: 
+    await client.start()
+   except: 
+    filee = open("account.txt","r+");lines = filee.readlines();lines = [line for line in lines if line.strip() != f"{session}"];filee.seek(0);filee.truncate();filee.writelines(lines);filee.close()
+  else : FUCK += 1; await bot.reply_to(message, 
+f" {FUCK} : عدد السيشنات الشغالة")
 @bot.message_handler(commands=['start'])
 def start(message):
     global id, name
@@ -49,28 +62,30 @@ def start(message):
     C = types.KeyboardButton("• 𝖣𝖾𝖫𝖾𝗍𝖾 𝖴𝗌𝖤𝗋 •")
     D = types.KeyboardButton(f"• 𝖲𝖫𝖾𝖾𝖯 : {sleep} •")
     E = types.KeyboardButton("• 𝖠𝖽𝖽 𝖲𝖫𝖾𝖾𝖯 •")
-    G = types.KeyboardButton("• 𝖱𝗎N •")
-    H = types.KeyboardButton("• 𝖲𝖳𝗈𝖯 Account •")
-    chrun = types.KeyboardButton("• 𝖱𝗎𝗇 channel •")
-    chstop = types.KeyboardButton("• 𝖲𝖳𝗈𝖯 channel •")
+    G = types.KeyboardButton("• 𝖱𝗎𝗇 •")
+    H = types.KeyboardButton("• 𝖲𝖳𝗈𝖯 •")
+    V = types.KeyboardButton("• 𝖱𝗎𝗇 channel •")
+    W = types.KeyboardButton("• 𝖲𝖳𝗈𝖯 channel •")
     I = types.KeyboardButton("• 𝖠𝖽𝖽 𝖠𝖼𝖼𝗈𝗎𝗇𝗍 •")
     J = types.KeyboardButton("•  𝖣𝖾𝖫𝖾𝗍𝖾 𝖺𝖫𝖫 𝖠𝖼𝖼𝖮𝗎𝗇𝖳 •")
     K = types.KeyboardButton("• 𝖵𝗂𝖾𝖶 𝖺𝖫𝖫 𝖠𝖼𝖼𝖮𝗎𝗇𝖳 •")
-    chek = types.KeyboardButton("ᴄʜᴇᴄᴋ")
+    Z = types.KeyboardButton("/start")
     mar.add(A)
     mar.add(B,C)
     mar.add(D)
     mar.add(E)
     mar.add(G,H)
-    mar.add(chrun,chstop)
+    mar.add(V,W) 
+    mar.add(F,M)
     mar.add(I,J)
     mar.add(K)
-    mar.add(chek)
-    ph = "https://telegra.ph/file/cfa8d23ac6a45eb51d8dd.mp4"
+    mar.add(Z) 
     if str(id) == own_id:
-    	bot.send_video(message.chat.id,ph,caption=f"""*- 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 {message.chat.first_name} , 
-𝒊𝒏 𝒕𝒉𝒆 𝒄𝒉𝒆𝒄𝒌𝒆𝒓 𝒖𝒔𝒆𝒓 𝒏𝒂𝒎𝒆 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 
-𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒅 𝒃𝒚 : @c_7c7 🇮🇶 , .*""",parse_mode="markdown",reply_markup=mar)
+    	bot.reply_to(message,text=f"- 𝖧𝖾𝖫𝖫𝗈 , {name}",parse_mode="markdown")
+    	bot.reply_to(message,text=f"""- 𝖶𝖾𝖫𝖼𝗈𝖬𝖾 𝖳𝗈 𝖴𝗌𝖤𝗋𝗌 𝖥𝖫𝗈𝗈𝖣 𝖥𝗂𝗌𝗁𝗂𝖭𝗀 𝖢𝗁𝖾𝖼𝖪𝖾𝗋 
+- 𝖣𝖾𝗏𝖾𝖫𝗈𝖯𝖾𝗋 : ErrOr""",parse_mode="markdown",reply_markup=mar)
+    if str(id) != own_id:
+    	bot.reply_to(message,text=f"""*-ʜᴀʟᴏ ᴋɪɴɢ *""",parse_mode="markdown",reply_markup=o)
 @bot.message_handler(func=lambda m:True)
 def text(message):
  	acc = message.text
@@ -83,7 +98,7 @@ def text(message):
  			except:
  				bot.send_message(message.chat.id, text="- There is no user .")
  		if acc == "• 𝖠𝖽𝖽 𝖴𝗌𝖤𝗋 •":
- 			bot.send_message(message.chat.id, text="- Send /user with user like this \n /user @ToGoLang' ")
+ 			bot.send_message(message.chat.id, text="- Send /user with user like this \n /user @iAPoALi ")
  		if acc == "• 𝖠𝖽𝖽 𝖲𝖫𝖾𝖾𝖯 •":
  			bot.send_message(message.chat.id, text="- Send /sleep with sleep like this \n /sleep 0 ")
  		if "/user" in acc and "@" in acc:
@@ -108,17 +123,25 @@ def text(message):
  				bot.send_message(message.chat.id, text="- Sleep has been added")
  			except:
  				bot.send_message(message.chat.id, text="- A problem occurred, please try again .")
- 		if acc == "• 𝖱𝗎N •":
+ 		if acc == "• 𝖱𝗎𝗇 •":
  			try:
- 				bot.send_message(message.chat.id, text="- The flood [ account ] bot has been activated .🐊")
- 				system("screen -S rode1 -X kill")
- 				system("screen -S rode1 python3 rode1.py")
+ 				os.remove("ko.txt")
  			except:
  				pass
- 		if acc == "• 𝖲𝖳𝗈𝖯 Account •":
  			try:
- 				bot.send_message(message.chat.id, text="- The flood [ account ] bot has been deactivated .🐊")
- 				system("screen -S rode1 -X kill")
+ 				with open('ko.txt', 'a') as the_combo:
+ 					the_combo.write(str("run")+"\n")
+ 				system("python3 bot.py")
+ 			except:
+ 				pass
+ 		if acc == "• 𝖲𝖳𝗈𝖯 •":
+ 			try:
+ 				os.remove("ko.txt")
+ 			except:
+ 				bot.send_message(message.chat.id, text="- The bot is stopped .")
+ 			try:
+ 				with open('ko.txt', 'a') as the_combo:
+ 					the_combo.write(str("stop")+"\n")
  			except:
  				pass
  		if acc == "• 𝖱𝗎𝗇 channel •":
@@ -164,7 +187,7 @@ def text(message):
  			try:
  				document = open('account.txt', 'rb')
  				m = len(open("account.txt").readlines())
- 				bot.send_document(message.chat.id,document,caption=f"- The number of your accounts : {m}\nBy : @ToGoLang '")
+ 				bot.send_document(message.chat.id,document,caption=f"- The number of your accounts : {m}\nBy : @ToGoLang")
  			except:
  				bot.send_message(message.chat.id, text="- There are no accounts .")
 bot.polling(none_stop=True)
